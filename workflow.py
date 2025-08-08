@@ -189,7 +189,7 @@ def generate_images_node(state:State):
 
         image = client.image_to_image(
             input_image,
-            prompt=variation_prompt,
+            prompt=variation_prompt+"remove all text"+"do not change the product",
             model="black-forest-labs/FLUX.1-Kontext-dev",
         )
 
@@ -271,12 +271,12 @@ def evaluate_images_node(state:State):
         with open("image_validation.txt","a") as f:
             f.write(f"{title}\n")
             for weight,concept in zip(weights.squeeze(0).cpu().numpy(),vocab):
-                validation_dict[concept].append((str(concept),float(weight)))
+                validation_dict[title].append((str(concept),float(weight)))
                 f.write(f"{concept}: {weight}\n")
             f.write("\n")
 
-        with open("image_validation.json","a") as f:
-            json.dump(validation_dict,f,indent=4)
+    with open("image_validation.json","a") as f:
+        json.dump(validation_dict,f,indent=4)
         
 
 
