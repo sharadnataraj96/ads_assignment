@@ -1,4 +1,4 @@
-from typing import TypedDict, Optional,Dict,List,Any
+from typing import TypedDict, Optional,Dict,List,Any,Tuple
 
 from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
@@ -39,6 +39,8 @@ class State(TypedDict):
     input_image_path : str
     urls_to_scrape : list[str]
     image_paths : list[str]
+
+    validation_dict : Dict[str,List[Tuple[str,float]]]
     
 
 class AnalysisSchema(BaseModel):
