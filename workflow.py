@@ -20,7 +20,7 @@ from langchain.tools import tool
 from pydantic import BaseModel
 
 
-from utils import scrape_pages
+from utils import scrape_pages,get_variation_by_title
 
 from models import State,AnalysisSchema,VariationsSchema
 
@@ -156,6 +156,7 @@ def generate_images_node(state:State):
     """
     output_dir = "output_images"
     os.makedirs(output_dir,exist_ok=True)
+    generated_images_paths:List[str] = []
 
     variations = state.get("variations_agent_response")
 
@@ -165,25 +166,55 @@ def generate_images_node(state:State):
     with open(input_image_path, "rb") as image_file:
         input_image = image_file.read()
 
-    client = InferenceClient(
-            provider="replicate",
-            api_key=hf_token,
-        )
+    # client = InferenceClient(
+    #         provider="replicate",
+    #         api_key=hf_token,
+    #     )
 
-    for variation in variations["variations"]:
-        variation_prompt = " ".join(variation["changes"])
+    # for variation in variations["variations"]:
+    #     variation_prompt = " ".join(variation["changes"])
 
-        image = client.image_to_image(
-            input_image,
-            prompt=variation_prompt,
-            model="black-forest-labs/FLUX.1-Kontext-dev",
-        )
+    #     image = client.image_to_image(
+    #         input_image,
+    #         prompt=variation_prompt,
+    #         model="black-forest-labs/FLUX.1-Kontext-dev",
+    #     )
 
-        image.save(os.path.join(output_dir,f"{variation['title']}.png"))
+    #     image_path = os.path.join(output_dir,f"{variation['title']}.png")
+    #     generated_images_paths.append(image_path)
+    #     image.save(image_path)
+
+    print("Images generated")
         
-    return {}
-        
-        
+    return {
+        "generated_images_paths":generated_images_paths
+    }
+
+
+def evaluate_images_node(state:State):
+    """
+    Node for evaluating images
+    Inputs:
+    - state: State
+    Outputs:
+    - state: State
+    """
+
+    generated_images_paths = state.get("generated_images_paths")
+    variations = state.get("variations_agent_response")
+
+    image_variation_pairs = []
+    for image_path in generated_images_paths:
+        filename = os.path.basename(image_path)
+        title, _ = os.path.splitext(filename)
+        variation = get_variation_by_title(variations, title)
+        if variation:
+            
+            val_vocab = variation.get("feature_unigrams") + variation.get("feature_bigrams")
+
+            
+    
+    
 
 
 def build_graph(llm:ChatOpenAI):

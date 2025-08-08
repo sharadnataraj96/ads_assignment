@@ -63,4 +63,11 @@ def scrape_pages(url_list, image_dir="hero_images"):
 
     return corpus,image_paths
 
+def get_variation_by_title(variations, title):
+    # variations is expected to be a dict with a "variations" key containing a list of dicts
+    for variation in variations.get("variations", []):
+        if variation.get("title") == title:
+            return variation
+    return None
+
 

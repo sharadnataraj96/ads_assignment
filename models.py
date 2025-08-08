@@ -33,11 +33,13 @@ class State(TypedDict):
     variations_agent_response : Dict[str,Any]
     analysis_agent_response_str : str
     variations_agent_response_str : str
+    generated_images_paths : list[str]
 
     input_image_base64 : str
     input_image_path : str
     urls_to_scrape : list[str]
     image_paths : list[str]
+    
 
 class AnalysisSchema(BaseModel):
     """
@@ -68,6 +70,8 @@ class VariationFormat(BaseModel):
     title : str
     audience : list[str]
     changes : list[str]
+    feature_unigrams : list[str]
+    feature_bigrams : list[str]
 
 class VariationsSchema(BaseModel):
     """
