@@ -1,0 +1,285 @@
+{
+    "relaxation": [
+        [
+            "relaxation",
+            {
+    "nighttime": [
+        [
+            "nighttime",
+            0.0071936435997486115
+        ]
+    ],
+    "ritual": [
+        [
+            "ritual",
+            0.0
+        ]
+    ],
+    "simplicity": [
+        [
+            "simplicity",
+            0.0
+        ]
+    ],
+    "effortless": [
+        [
+            "effortless",
+            0.0
+        ]
+    ],
+    "rest": [
+        [
+            "rest",
+            0.04598487168550491
+        ]
+    ],
+    "restore": [
+        [
+            "restore",
+            0.0010781725868582726
+        ]
+    ],
+    "bedroom": [
+        [
+            "bedroom",
+            0.03434685245156288
+        ]
+    ],
+    "cozy": [
+        [
+            "cozy",
+            0.006258196197450161
+        ]
+    ],
+    "minimalism": [
+        [
+            "minimalism",
+            0.04278847202658653
+        ]
+    ],
+    "nightstand routine": [
+        [
+            "nightstand routine",
+            0.11349895596504211
+        ]
+    ],
+    "evening ritual": [
+        [
+            "evening ritual",
+            0.027438972145318985
+        ]
+    ],
+    "calm ambiance": [
+        [
+            "calm ambiance",
+            0.09177718311548233
+        ]
+    ],
+    "bedside simplicity": [
+        [
+            "bedside simplicity",
+            0.1125839352607727
+        ]
+    ]
+}{
+    "evening": [
+        [
+            "evening",
+            0.0
+        ]
+    ],
+    "self-care": [
+        [
+            "self-care",
+            0.038374729454517365
+        ]
+    ],
+    "relaxation": [
+        [
+            "relaxation",
+            0.0
+        ]
+    ],
+    "luxury": [
+        [
+            "luxury",
+            0.1326766163110733
+        ]
+    ],
+    "ritual": [
+        [
+            "ritual",
+            0.0
+        ]
+    ],
+    "bathroom": [
+        [
+            "bathroom",
+            0.1428978145122528
+        ]
+    ],
+    "calm": [
+        [
+            "calm",
+            0.00301798852160573
+        ]
+    ],
+    "evening routine": [
+        [
+            "evening routine",
+            0.13938990235328674
+        ]
+    ],
+    "self-care ritual": [
+        [
+            "self-care ritual",
+            0.1816076934337616
+        ]
+    ],
+    "marble counter": [
+        [
+            "marble counter",
+            0.0943114310503006
+        ]
+    ],
+    "lit candle": [
+        [
+            "lit candle",
+            0.16356651484966278
+        ]
+    ],
+    "plush towel": [
+        [
+            "plush towel",
+            0.08196281641721725
+        ]
+    ]
+}{
+    "desk": [
+        [
+            "desk",
+            0.06699376553297043
+        ]
+    ],
+    "professional": [
+        [
+            "professional",
+            0.08502387255430222
+        ]
+    ],
+    "makeup": [
+        [
+            "makeup",
+            0.0984259694814682
+        ]
+    ],
+    "city": [
+        [
+            "city",
+            0.04017313942313194
+        ]
+    ],
+    "boost": [
+        [
+            "boost",
+            0.0
+        ]
+    ],
+    "transition": [
+        [
+            "transition",
+            0.0
+        ]
+    ],
+    "desk transformation": [
+        [
+            "desk transformation",
+            0.0037779426202178
+        ]
+    ],
+    "city view": [
+        [
+            "city view",
+            0.0
+        ]
+    ],
+    "office chic": [
+        [
+            "office chic",
+            0.029469653964042664
+        ]
+    ],
+    "evening plans": [
+        [
+            "evening plans",
+            0.048028863966464996
+        ]
+    ],
+    "quick boost": [
+        [
+            "quick boost",
+            0.01436060480773449
+        ]
+    ]
+}{
+    "minimalist": [
+        [
+            "minimalist",
+            0.0849251076579094
+        ]
+    ],
+    "nightstand": [
+        [
+            "nightstand",
+            0.12144085764884949
+        ]
+    ],
+    "essential": [
+        [
+            "essential",
+            0.06528027355670929
+        ]
+    ],
+    "simplicity": [
+        [
+            "simplicity",
+            0.0
+        ]
+    ],
+    "design": [
+        [
+            "design",
+            0.0
+        ]
+    ],
+    "nightstand essential": [
+        [
+            "nightstand essential",
+            0.05415908619761467
+        ]
+    ],
+    "low light": [
+        [
+            "low light",
+            0.09567629545927048
+        ]
+    ],
+    "sleek design": [
+        [
+            "sleek design",
+            0.06581498682498932
+        ]
+    ],
+    "single product": [
+        [
+            "single product",
+            0.1303548365831375
+        ]
+    ],
+    "nighttime renewal": [
+        [
+            "nighttime renewal",
+            0.021922074258327484
+        ]
+    ]
+}

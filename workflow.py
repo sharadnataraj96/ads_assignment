@@ -44,6 +44,8 @@ def analyze_product_img_node(state: State) -> Dict[str,Any]:
     Outputs:
     - state: State
     """
+
+    print("ENTERING ANALYSIS NODE")
     # Load system prompt
     system_prompt = open("system_prompts/brand_summary.txt", "r").read()
 
@@ -97,6 +99,8 @@ def init_var_messages(state:State):
     Outputs:
     - variations_llm_messages: list[BaseMessage]
     """
+
+    print("ENTERING INIT VAR MESSAGES")
     variation_system_prompt = open("system_prompts/variations.txt", "r").read()
     product_shot_base64 = state.get("input_image_base64")
     analysis = state.get("analysis_agent_response_str")
@@ -124,6 +128,7 @@ def generate_variations_node(state: State) -> Dict[str,Any]:
     Outputs:
     - state: State
     """
+    print("ENTERING GENERATE VARIATIONS NODE")
     # Init messages if not already present
     messages = state.get("variations_agent_messages")
     if not messages:
@@ -161,6 +166,7 @@ def generate_images_node(state:State):
     Outputs:
     - state: State
     """
+    print("ENTERING GENERATE IMAGES NODE")
     output_dir = "output_images"
     os.makedirs(output_dir,exist_ok=True)
     generated_images_paths:List[str] = []
@@ -178,18 +184,18 @@ def generate_images_node(state:State):
             api_key=hf_token,
         )
 
-    # for variation in variations["variations"]:
-    #     variation_prompt = " ".join(variation["changes"])
+    for variation in variations["variations"]:
+        variation_prompt = " ".join(variation["changes"])
 
-    #     image = client.image_to_image(
-    #         input_image,
-    #         prompt=variation_prompt,
-    #         model="black-forest-labs/FLUX.1-Kontext-dev",
-    #     )
+        image = client.image_to_image(
+            input_image,
+            prompt=variation_prompt,
+            model="black-forest-labs/FLUX.1-Kontext-dev",
+        )
 
-    #     image_path = os.path.join(output_dir,f"{variation['title'].strip().replace(' ','_')}.png")
-    #     generated_images_paths.append(image_path)
-    #     image.save(image_path)
+        image_path = os.path.join(output_dir,f"{variation['title'].strip().replace(' ','_')}.png")
+        generated_images_paths.append(image_path)
+        image.save(image_path)
 
     print("Images generated")
         
@@ -207,13 +213,13 @@ def get_splice_inputs(vocab:List[str]):
     - splice_inputs: List[torch.Tensor]
     """
 
-    model, _ = clip.load("ViT-B/32", device="cuda")
+    model, _ = clip.load("ViT-B/32", device="cpu")
     
     
     concepts = []
     for line in vocab:
         with torch.no_grad():
-            tokens = clip.tokenize(line).to("cuda")
+            tokens = clip.tokenize(line).to("cpu")
             text_features = model.encode_text(tokens).to(torch.float32)
             mask = torch.isnan(text_features)
             text_features[mask] = 0
@@ -240,34 +246,38 @@ def evaluate_images_node(state:State):
     - state: State
     """
 
+    print("ENTERING EVALUATE IMAGES NODE")
+
     variations = state.get("variations_agent_response")["variations"]
-    model, preprocess = clip.load("ViT-B/32", device="cuda")
+    model, preprocess = clip.load("ViT-B/32", device="cpu")
 
     for variation in variations:
-        title = variation["title"]
+        title = variation["title"].strip().replace(" ","_")
         vocab = variation["feature_unigrams"] + variation["feature_bigrams"]
         
-        concepts_norm = get_splice_inputs(vocab,state.get("input_image_path"))
+        concepts_norm = get_splice_inputs(vocab)
         image_mean = torch.zeros_like(concepts_norm[0])
 
-        splicemodel = splice.SPLICE(image_mean, concepts_norm, clip=model, device="cuda")
+        splicemodel = splice.SPLICE(image_mean, concepts_norm, clip=model, device="cpu")
 
         preprocess = splice.get_preprocess("clip:ViT-B/32")
         image = Image.open(f"output_images/{title}.png")
-        image_tensor = preprocess(image).unsqueeze(0).to("cuda")
+        image_tensor = preprocess(image).unsqueeze(0).to("cpu")
 
-        weights, l0, cosine = splice.decompose_image(image_tensor,splicemodel = splicemodel, device="cuda")
+        weights, l0, cosine = splice.decompose_image(image_tensor,splicemodel = splicemodel, device="cpu")
 
         validation_dict = defaultdict(list)
 
         with open("image_validation.txt","a") as f:
-            f.write(f"{title}\n\n")
+            f.write(f"{title}\n")
             for weight,concept in zip(weights.squeeze(0).cpu().numpy(),vocab):
-                validation_dict[concept].append((concept,weight))
+                validation_dict[concept].append((str(concept),float(weight)))
                 f.write(f"{concept}: {weight}\n")
+            f.write("\n")
 
         with open("image_validation.json","a") as f:
             json.dump(validation_dict,f,indent=4)
+        
 
 
 

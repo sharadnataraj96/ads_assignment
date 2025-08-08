@@ -1,86 +1,87 @@
 {
     "variations": [
         {
-            "title": "Morning Rituals on the Vanity",
+            "title": "Evening Self-Care Ritual",
             "audience": [
-                "Skincare enthusiasts",
-                "Professionals seeking efficient routines",
-                "Luxury self-care consumers"
+                "urban professionals",
+                "self-care enthusiasts",
+                "luxury skincare consumers"
             ],
             "changes": [
-                "Place a single U Beauty Resurfacing Compound bottle on a sleek marble bathroom vanity, surrounded by a soft, fluffy white towel and a minimalistic gold or silver mirror.",
-                "Change lighting to early morning, cool daylight streaming through a frosted window, creating an energizing but tranquil mood.",
-                "Remove the travel pouch and wooden floor; highlight the product as the centerpiece of the at-home morning routine."
+                "Set the U Beauty Resurfacing Compound bottles on a marble bathroom counter next to a lit candle and a plush towel, suggesting an evening wind-down routine.",
+                "Soft, warm lighting to evoke relaxation and luxury.",
+                "Include props like a silk eye mask and a glass of water or herbal tea to further reinforce the self-care moment."
             ],
             "feature_unigrams": [
-                "vanity",
-                "morning",
-                "ritual",
-                "luxury",
+                "evening",
                 "self-care",
-                "renewal",
-                "clarity"
-            ],
-            "feature_bigrams": [
-                "morning light",
-                "bathroom vanity",
-                "daily ritual",
-                "luxury skincare"
-            ]
-        },
-        {
-            "title": "Nighttime Wind Down",
-            "audience": [
-                "Urban professionals",
-                "Individuals seeking relaxation in their skincare",
-                "Luxury beauty buyers"
-            ],
-            "changes": [
-                "Show the U Beauty Resurfacing Compound on a bedside table next to a silk eye mask, a lit candle, and a small glass of water.",
-                "Background is a softly-lit bedroom at dusk, with navy and charcoal tones for a calming effect.",
-                "Focus on the transition from the hustle of the day to soothing self-care, emphasizing the product as essential for nighttime renewal."
-            ],
-            "feature_unigrams": [
-                "night",
-                "calm",
-                "renewal",
-                "bedside",
-                "rest",
                 "relaxation",
-                "evening"
+                "luxury",
+                "ritual",
+                "bathroom",
+                "calm"
             ],
             "feature_bigrams": [
-                "nighttime skincare",
-                "bedside table",
                 "evening routine",
-                "soothing light"
+                "self-care ritual",
+                "marble counter",
+                "lit candle",
+                "plush towel"
             ]
         },
         {
-            "title": "Professional Power Move",
+            "title": "Desk-to-Dinner Transformation",
             "audience": [
-                "Executives",
-                "On-the-go professionals",
-                "Minimalists who value science-backed beauty"
+                "busy professionals",
+                "young urban women",
+                "beauty multitaskers"
             ],
             "changes": [
-                "Place the Resurfacing Compound at the edge of a modern office desk, next to a laptop, designer pen, and a chic leather planner.",
-                "Bright, natural daylight streams through a city office window, creating a sense of clarity and productivity.",
-                "Include props like a sleek coffee cup and subtle high-tech accessories to reinforce the product\u2019s innovation and multitasking benefits."
+                "Display the Resurfacing Compound bottle on a chic, modern office desk next to a laptop, makeup pouch, and a statement accessory (like earrings).",
+                "Daylight streaming in through a window with a subtle city view in the background.",
+                "Emphasize the serum as a quick, effective skincare boost between work and evening plans."
             ],
             "feature_unigrams": [
-                "office",
-                "power",
-                "clarity",
-                "minimalism",
-                "innovation",
-                "confidence"
+                "desk",
+                "professional",
+                "makeup",
+                "city",
+                "boost",
+                "transition"
             ],
             "feature_bigrams": [
-                "professional desk",
-                "science-backed",
-                "office essentials",
-                "daylight productivity"
+                "desk transformation",
+                "city view",
+                "office chic",
+                "evening plans",
+                "quick boost"
+            ]
+        },
+        {
+            "title": "Minimalist Nightstand Essential",
+            "audience": [
+                "minimalists",
+                "design-conscious consumers",
+                "skincare simplifiers"
+            ],
+            "changes": [
+                "Place a single Resurfacing Compound bottle on a sleek, uncluttered nightstand with a small designer lamp and a single book.",
+                "Soft, low evening light to highlight calm and simplicity.",
+                "No other skincare products visible; focus on the product as the sole essential for nighttime skin renewal."
+            ],
+            "feature_unigrams": [
+                "minimalist",
+                "nightstand",
+                "essential",
+                "simplicity",
+                "design"
+            ],
+            "feature_bigrams": [
+                "nightstand essential",
+                "low light",
+                "sleek design",
+                "single product",
+                "nighttime renewal"
             ]
         }
     ]

@@ -1,0 +1,66 @@
+Nightstand Ritual
+
+relaxation: 0.0
+evening: 0.0
+bedroom: 0.035611458122730255
+routine: 0.0
+self-care: 0.0
+calm: 0.0
+nightstand ritual: 0.03738803789019585
+evening self-care: 0.028715021908283234
+calming routine: 0.08717938512563705
+bedside luxury: 0.17770525813102722
+Nightstand Ritual
+
+nighttime: 0.0071936435997486115
+ritual: 0.0
+simplicity: 0.0
+effortless: 0.0
+rest: 0.04598487168550491
+restore: 0.0010781725868582726
+bedroom: 0.03434685245156288
+cozy: 0.006258196197450161
+minimalism: 0.04278847202658653
+nightstand routine: 0.11349895596504211
+evening ritual: 0.027438972145318985
+calm ambiance: 0.09177718311548233
+bedside simplicity: 0.1125839352607727
+Evening_Self-Care_Ritual
+
+evening: 0.0
+self-care: 0.038374729454517365
+relaxation: 0.0
+luxury: 0.1326766163110733
+ritual: 0.0
+bathroom: 0.1428978145122528
+calm: 0.00301798852160573
+evening routine: 0.13938990235328674
+self-care ritual: 0.1816076934337616
+marble counter: 0.0943114310503006
+lit candle: 0.16356651484966278
+plush towel: 0.08196281641721725
+Desk-to-Dinner_Transformation
+
+desk: 0.06699376553297043
+professional: 0.08502387255430222
+makeup: 0.0984259694814682
+city: 0.04017313942313194
+boost: 0.0
+transition: 0.0
+desk transformation: 0.0037779426202178
+city view: 0.0
+office chic: 0.029469653964042664
+evening plans: 0.048028863966464996
+quick boost: 0.01436060480773449
+Minimalist_Nightstand_Essential
+
+minimalist: 0.0849251076579094
+nightstand: 0.12144085764884949
+essential: 0.06528027355670929
+simplicity: 0.0
+design: 0.0
+nightstand essential: 0.05415908619761467
+low light: 0.09567629545927048
+sleek design: 0.06581498682498932
+single product: 0.1303548365831375
+nighttime renewal: 0.021922074258327484
