@@ -1,4 +1,4 @@
-from typing import TypedDict, Optional,Dict,List,Any
+from typing import TypedDict, Optional,Dict,List,Any,Tuple
 
 from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
@@ -33,11 +33,15 @@ class State(TypedDict):
     variations_agent_response : Dict[str,Any]
     analysis_agent_response_str : str
     variations_agent_response_str : str
+    generated_images_paths : list[str]
 
     input_image_base64 : str
     input_image_path : str
     urls_to_scrape : list[str]
     image_paths : list[str]
+
+    validation_dict : Dict[str,List[Tuple[str,float]]]
+    
 
 class AnalysisSchema(BaseModel):
     """
@@ -68,6 +72,8 @@ class VariationFormat(BaseModel):
     title : str
     audience : list[str]
     changes : list[str]
+    feature_unigrams : list[str]
+    feature_bigrams : list[str]
 
 class VariationsSchema(BaseModel):
     """

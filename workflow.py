@@ -7,6 +7,11 @@ import json
 from typing import TypedDict, Optional,Dict,List,Any
 import base64
 import argparse
+from collections import defaultdict
+
+
+import clip
+import torch
 
 from PIL import Image
 
@@ -19,8 +24,10 @@ from langchain.tools import tool
 
 from pydantic import BaseModel
 
+import splice
 
-from utils import scrape_pages
+
+from utils import scrape_pages,get_variation_by_title
 
 from models import State,AnalysisSchema,VariationsSchema
 
@@ -37,6 +44,8 @@ def analyze_product_img_node(state: State) -> Dict[str,Any]:
     Outputs:
     - state: State
     """
+
+    print("ENTERING ANALYSIS NODE")
     # Load system prompt
     system_prompt = open("system_prompts/brand_summary.txt", "r").read()
 
@@ -90,6 +99,8 @@ def init_var_messages(state:State):
     Outputs:
     - variations_llm_messages: list[BaseMessage]
     """
+
+    print("ENTERING INIT VAR MESSAGES")
     variation_system_prompt = open("system_prompts/variations.txt", "r").read()
     product_shot_base64 = state.get("input_image_base64")
     analysis = state.get("analysis_agent_response_str")
@@ -117,6 +128,7 @@ def generate_variations_node(state: State) -> Dict[str,Any]:
     Outputs:
     - state: State
     """
+    print("ENTERING GENERATE VARIATIONS NODE")
     # Init messages if not already present
     messages = state.get("variations_agent_messages")
     if not messages:
@@ -154,8 +166,10 @@ def generate_images_node(state:State):
     Outputs:
     - state: State
     """
+    print("ENTERING GENERATE IMAGES NODE")
     output_dir = "output_images"
     os.makedirs(output_dir,exist_ok=True)
+    generated_images_paths:List[str] = []
 
     variations = state.get("variations_agent_response")
 
@@ -175,15 +189,118 @@ def generate_images_node(state:State):
 
         image = client.image_to_image(
             input_image,
-            prompt=variation_prompt,
+            prompt=variation_prompt+"remove all text"+"do not change the product",
             model="black-forest-labs/FLUX.1-Kontext-dev",
         )
 
-        image.save(os.path.join(output_dir,f"{variation['title']}.png"))
+        image_path = os.path.join(output_dir,f"{variation['title'].strip().replace(' ','_')}.png")
+        generated_images_paths.append(image_path)
+        image.save(image_path)
+
+    print("Images generated")
         
-    return {}
+    return {
+        "generated_images_paths":generated_images_paths
+    }
+
+def get_splice_inputs(vocab:List[str]):
+    """
+    Get the splice inputs for the vocabulary
+    Inputs:
+    - vocab: List[str]
+    - image_path: str
+    Outputs:
+    - splice_inputs: List[torch.Tensor]
+    """
+
+    model, _ = clip.load("ViT-B/32", device="cpu")
+    
+    
+    concepts = []
+    for line in vocab:
+        with torch.no_grad():
+            tokens = clip.tokenize(line).to("cpu")
+            text_features = model.encode_text(tokens).to(torch.float32)
+            mask = torch.isnan(text_features)
+            text_features[mask] = 0
+            text_features /= text_features.norm(dim=-1, keepdim=True)
+            concepts.append(text_features)
+    
+    concepts_tensor = torch.stack(concepts).squeeze(1)
+    concepts_norm = torch.nn.functional.normalize(concepts_tensor, dim=1)
+    concepts_norm = torch.nn.functional.normalize(concepts_norm-torch.mean(concepts_norm, dim=0), dim=1)
+
+    return concepts_norm
+
+
+
+
+
+
+def evaluate_images_node(state:State):
+    """
+    Node for evaluating images
+    Inputs:
+    - state: State
+    Outputs:
+    - state: State
+    """
+
+    print("ENTERING EVALUATE IMAGES NODE")
+
+    variations = state.get("variations_agent_response")["variations"]
+    model, preprocess = clip.load("ViT-B/32", device="cpu")
+
+    for variation in variations:
+        title = variation["title"].strip().replace(" ","_")
+        vocab = variation["feature_unigrams"] + variation["feature_bigrams"]
         
+        concepts_norm = get_splice_inputs(vocab)
+        image_mean = torch.zeros_like(concepts_norm[0])
+
+        splicemodel = splice.SPLICE(image_mean, concepts_norm, clip=model, device="cpu")
+
+        preprocess = splice.get_preprocess("clip:ViT-B/32")
+        image = Image.open(f"output_images/{title}.png")
+        image_tensor = preprocess(image).unsqueeze(0).to("cpu")
+
+        weights, l0, cosine = splice.decompose_image(image_tensor,splicemodel = splicemodel, device="cpu")
+
+        validation_dict = defaultdict(list)
+
+        with open("image_validation.txt","a") as f:
+            f.write(f"{title}\n")
+            for weight,concept in zip(weights.squeeze(0).cpu().numpy(),vocab):
+                validation_dict[title].append((str(concept),float(weight)))
+                f.write(f"{concept}: {weight}\n")
+            f.write("\n")
+
+    with open("image_validation.json","a") as f:
+        json.dump(validation_dict,f,indent=4)
         
+
+
+
+    return {
+        "validation_dict":validation_dict
+    }
+
+            
+
+
+        
+
+
+
+
+
+
+        
+
+
+            
+    
+    
 
 
 def build_graph(llm:ChatOpenAI):
@@ -199,10 +316,12 @@ def build_graph(llm:ChatOpenAI):
     builder.add_node("analyze_product_img",analyze_product_img_node)
     builder.add_node("generate_variations",generate_variations_node)
     builder.add_node("generate_images",generate_images_node)
+    builder.add_node("evaluate_images",evaluate_images_node)
     builder.set_entry_point("analyze_product_img")
     builder.add_edge("analyze_product_img","generate_variations")
     builder.add_edge("generate_variations","generate_images")
-    builder.set_finish_point("generate_images")
+    builder.add_edge("generate_images","evaluate_images")
+    builder.set_finish_point("evaluate_images")
 
     return builder.compile()
 

@@ -1,0 +1,884 @@
+{
+    "relaxation": [
+        [
+            "relaxation",
+            {
+    "nighttime": [
+        [
+            "nighttime",
+            0.0071936435997486115
+        ]
+    ],
+    "ritual": [
+        [
+            "ritual",
+            0.0
+        ]
+    ],
+    "simplicity": [
+        [
+            "simplicity",
+            0.0
+        ]
+    ],
+    "effortless": [
+        [
+            "effortless",
+            0.0
+        ]
+    ],
+    "rest": [
+        [
+            "rest",
+            0.04598487168550491
+        ]
+    ],
+    "restore": [
+        [
+            "restore",
+            0.0010781725868582726
+        ]
+    ],
+    "bedroom": [
+        [
+            "bedroom",
+            0.03434685245156288
+        ]
+    ],
+    "cozy": [
+        [
+            "cozy",
+            0.006258196197450161
+        ]
+    ],
+    "minimalism": [
+        [
+            "minimalism",
+            0.04278847202658653
+        ]
+    ],
+    "nightstand routine": [
+        [
+            "nightstand routine",
+            0.11349895596504211
+        ]
+    ],
+    "evening ritual": [
+        [
+            "evening ritual",
+            0.027438972145318985
+        ]
+    ],
+    "calm ambiance": [
+        [
+            "calm ambiance",
+            0.09177718311548233
+        ]
+    ],
+    "bedside simplicity": [
+        [
+            "bedside simplicity",
+            0.1125839352607727
+        ]
+    ]
+}{
+    "evening": [
+        [
+            "evening",
+            0.0
+        ]
+    ],
+    "self-care": [
+        [
+            "self-care",
+            0.038374729454517365
+        ]
+    ],
+    "relaxation": [
+        [
+            "relaxation",
+            0.0
+        ]
+    ],
+    "luxury": [
+        [
+            "luxury",
+            0.1326766163110733
+        ]
+    ],
+    "ritual": [
+        [
+            "ritual",
+            0.0
+        ]
+    ],
+    "bathroom": [
+        [
+            "bathroom",
+            0.1428978145122528
+        ]
+    ],
+    "calm": [
+        [
+            "calm",
+            0.00301798852160573
+        ]
+    ],
+    "evening routine": [
+        [
+            "evening routine",
+            0.13938990235328674
+        ]
+    ],
+    "self-care ritual": [
+        [
+            "self-care ritual",
+            0.1816076934337616
+        ]
+    ],
+    "marble counter": [
+        [
+            "marble counter",
+            0.0943114310503006
+        ]
+    ],
+    "lit candle": [
+        [
+            "lit candle",
+            0.16356651484966278
+        ]
+    ],
+    "plush towel": [
+        [
+            "plush towel",
+            0.08196281641721725
+        ]
+    ]
+}{
+    "desk": [
+        [
+            "desk",
+            0.06699376553297043
+        ]
+    ],
+    "professional": [
+        [
+            "professional",
+            0.08502387255430222
+        ]
+    ],
+    "makeup": [
+        [
+            "makeup",
+            0.0984259694814682
+        ]
+    ],
+    "city": [
+        [
+            "city",
+            0.04017313942313194
+        ]
+    ],
+    "boost": [
+        [
+            "boost",
+            0.0
+        ]
+    ],
+    "transition": [
+        [
+            "transition",
+            0.0
+        ]
+    ],
+    "desk transformation": [
+        [
+            "desk transformation",
+            0.0037779426202178
+        ]
+    ],
+    "city view": [
+        [
+            "city view",
+            0.0
+        ]
+    ],
+    "office chic": [
+        [
+            "office chic",
+            0.029469653964042664
+        ]
+    ],
+    "evening plans": [
+        [
+            "evening plans",
+            0.048028863966464996
+        ]
+    ],
+    "quick boost": [
+        [
+            "quick boost",
+            0.01436060480773449
+        ]
+    ]
+}{
+    "minimalist": [
+        [
+            "minimalist",
+            0.0849251076579094
+        ]
+    ],
+    "nightstand": [
+        [
+            "nightstand",
+            0.12144085764884949
+        ]
+    ],
+    "essential": [
+        [
+            "essential",
+            0.06528027355670929
+        ]
+    ],
+    "simplicity": [
+        [
+            "simplicity",
+            0.0
+        ]
+    ],
+    "design": [
+        [
+            "design",
+            0.0
+        ]
+    ],
+    "nightstand essential": [
+        [
+            "nightstand essential",
+            0.05415908619761467
+        ]
+    ],
+    "low light": [
+        [
+            "low light",
+            0.09567629545927048
+        ]
+    ],
+    "sleek design": [
+        [
+            "sleek design",
+            0.06581498682498932
+        ]
+    ],
+    "single product": [
+        [
+            "single product",
+            0.1303548365831375
+        ]
+    ],
+    "nighttime renewal": [
+        [
+            "nighttime renewal",
+            0.021922074258327484
+        ]
+    ]
+}{
+    "vanity": [
+        [
+            "vanity",
+            0.0033226395025849342
+        ]
+    ],
+    "evening": [
+        [
+            "evening",
+            0.0
+        ]
+    ],
+    "relaxation": [
+        [
+            "relaxation",
+            0.029949087649583817
+        ]
+    ],
+    "silk": [
+        [
+            "silk",
+            0.00031470038811676204
+        ]
+    ],
+    "ritual": [
+        [
+            "ritual",
+            0.03536660969257355
+        ]
+    ],
+    "glow": [
+        [
+            "glow",
+            0.0
+        ]
+    ],
+    "luxury": [
+        [
+            "luxury",
+            0.1214621290564537
+        ]
+    ],
+    "evening ritual": [
+        [
+            "evening ritual",
+            0.12826336920261383
+        ]
+    ],
+    "glowing candle": [
+        [
+            "glowing candle",
+            0.17136144638061523
+        ]
+    ],
+    "silk eye mask": [
+        [
+            "silk eye mask",
+            0.11503680795431137
+        ]
+    ],
+    "marble vanity": [
+        [
+            "marble vanity",
+            0.0679868832230568
+        ]
+    ],
+    "plush towel": [
+        [
+            "plush towel",
+            0.071419358253479
+        ]
+    ]
+}{
+    "morning": [
+        [
+            "morning",
+            0.01892353594303131
+        ]
+    ],
+    "desk": [
+        [
+            "desk",
+            0.05766278877854347
+        ]
+    ],
+    "workspace": [
+        [
+            "workspace",
+            0.014497374184429646
+        ]
+    ],
+    "energy": [
+        [
+            "energy",
+            0.0
+        ]
+    ],
+    "productivity": [
+        [
+            "productivity",
+            0.03888793662190437
+        ]
+    ],
+    "light": [
+        [
+            "light",
+            0.08654674887657166
+        ]
+    ],
+    "morning routine": [
+        [
+            "morning routine",
+            0.12272808700799942
+        ]
+    ],
+    "desk essentials": [
+        [
+            "desk essentials",
+            0.15165239572525024
+        ]
+    ],
+    "natural light": [
+        [
+            "natural light",
+            0.0
+        ]
+    ],
+    "daily planner": [
+        [
+            "daily planner",
+            0.0
+        ]
+    ],
+    "workspace organization": [
+        [
+            "workspace organization",
+            0.04305412247776985
+        ]
+    ]
+}{
+    "gym": [
+        [
+            "gym",
+            0.026243362575769424
+        ]
+    ],
+    "fitness": [
+        [
+            "fitness",
+            0.11858809739351273
+        ]
+    ],
+    "post-workout": [
+        [
+            "post-workout",
+            0.0
+        ]
+    ],
+    "refresh": [
+        [
+            "refresh",
+            0.10335639864206314
+        ]
+    ],
+    "essential": [
+        [
+            "essential",
+            0.14582327008247375
+        ]
+    ],
+    "energy": [
+        [
+            "energy",
+            0.0
+        ]
+    ],
+    "gym bag": [
+        [
+            "gym bag",
+            0.2000788152217865
+        ]
+    ],
+    "locker room": [
+        [
+            "locker room",
+            0.14651069045066833
+        ]
+    ],
+    "workout essentials": [
+        [
+            "workout essentials",
+            0.10450100153684616
+        ]
+    ],
+    "post-workout care": [
+        [
+            "post-workout care",
+            0.03650498762726784
+        ]
+    ],
+    "compact skincare": [
+        [
+            "compact skincare",
+            0.13065186142921448
+        ]
+    ]
+}{
+    "nighttime": [
+        [
+            "nighttime",
+            0.03545979782938957
+        ]
+    ],
+    "relaxation": [
+        [
+            "relaxation",
+            0.0
+        ]
+    ],
+    "elegance": [
+        [
+            "elegance",
+            0.0
+        ]
+    ],
+    "self-care": [
+        [
+            "self-care",
+            0.022263243794441223
+        ]
+    ],
+    "luxury": [
+        [
+            "luxury",
+            0.00832238420844078
+        ]
+    ],
+    "evening ritual": [
+        [
+            "evening ritual",
+            0.0003633825108408928
+        ]
+    ],
+    "silk eye mask": [
+        [
+            "silk eye mask",
+            0.0
+        ]
+    ],
+    "candlelight glow": [
+        [
+            "candlelight glow",
+            0.001219591242261231
+        ]
+    ],
+    "luxury skincare": [
+        [
+            "luxury skincare",
+            0.0
+        ]
+    ]
+}{
+    "office": [
+        [
+            "office",
+            0.0731029286980629
+        ]
+    ],
+    "productivity": [
+        [
+            "productivity",
+            0.014877171255648136
+        ]
+    ],
+    "radiance": [
+        [
+            "radiance",
+            0.07910484820604324
+        ]
+    ],
+    "transition": [
+        [
+            "transition",
+            0.0
+        ]
+    ],
+    "glow": [
+        [
+            "glow",
+            0.009183317422866821
+        ]
+    ],
+    "desk essentials": [
+        [
+            "desk essentials",
+            0.1334448903799057
+        ]
+    ],
+    "quick touch-up": [
+        [
+            "quick touch-up",
+            0.06464486569166183
+        ]
+    ],
+    "urban sunset": [
+        [
+            "urban sunset",
+            0.010530455969274044
+        ]
+    ],
+    "effortless transition": [
+        [
+            "effortless transition",
+            0.08943750709295273
+        ]
+    ]
+}{
+    "fitness": [
+        [
+            "fitness",
+            0.006272684782743454
+        ]
+    ],
+    "refresh": [
+        [
+            "refresh",
+            0.06598397344350815
+        ]
+    ],
+    "glow": [
+        [
+            "glow",
+            0.0
+        ]
+    ],
+    "post-workout": [
+        [
+            "post-workout",
+            0.053082093596458435
+        ]
+    ],
+    "wellness": [
+        [
+            "wellness",
+            0.09352801740169525
+        ]
+    ],
+    "gym bag": [
+        [
+            "gym bag",
+            0.12438996881246567
+        ]
+    ],
+    "locker bench": [
+        [
+            "locker bench",
+            0.03009793721139431
+        ]
+    ],
+    "active routine": [
+        [
+            "active routine",
+            0.0407465323805809
+        ]
+    ],
+    "post-workout glow": [
+        [
+            "post-workout glow",
+            0.0
+        ]
+    ]
+}{
+    "travel": [
+        [
+            "travel",
+            0.09291163086891174
+        ]
+    ],
+    "vacation": [
+        [
+            "vacation",
+            0.0
+        ]
+    ],
+    "simplicity": [
+        [
+            "simplicity",
+            0.07841223478317261
+        ]
+    ],
+    "relaxation": [
+        [
+            "relaxation",
+            0.022521037608385086
+        ]
+    ],
+    "luxury": [
+        [
+            "luxury",
+            0.0761953741312027
+        ]
+    ],
+    "hotel bathroom": [
+        [
+            "hotel bathroom",
+            0.1307918280363083
+        ]
+    ],
+    "travel map": [
+        [
+            "travel map",
+            0.0
+        ]
+    ],
+    "passport ready": [
+        [
+            "passport ready",
+            0.0
+        ]
+    ],
+    "sunlit scene": [
+        [
+            "sunlit scene",
+            0.09848179668188095
+        ]
+    ]
+}{
+    "Nightstand_Ritual": [
+        [
+            "nightstand",
+            0.013909424655139446
+        ],
+        [
+            "ritual",
+            0.0
+        ],
+        [
+            "evening",
+            0.0173250213265419
+        ],
+        [
+            "relaxation",
+            0.01371981855481863
+        ],
+        [
+            "cozy",
+            0.0
+        ],
+        [
+            "self-care",
+            0.05066434293985367
+        ],
+        [
+            "nighttime routine",
+            0.11882984638214111
+        ],
+        [
+            "evening ritual",
+            0.03606783598661423
+        ],
+        [
+            "soft lighting",
+            0.05593797191977501
+        ],
+        [
+            "bedside table",
+            0.13142508268356323
+        ]
+    ]
+}{
+    "Science-Lab_Precision": [
+        [
+            "science",
+            0.018156472593545914
+        ],
+        [
+            "innovation",
+            0.05610908940434456
+        ],
+        [
+            "clinical",
+            0.04121656343340874
+        ],
+        [
+            "precision",
+            0.0
+        ],
+        [
+            "technology",
+            0.0
+        ],
+        [
+            "efficacy",
+            0.11322957277297974
+        ],
+        [
+            "lab setting",
+            0.13839149475097656
+        ],
+        [
+            "SIREN Capsule",
+            0.10303046554327011
+        ],
+        [
+            "clinical study",
+            0.07111810892820358
+        ],
+        [
+            "modern science",
+            0.06374728679656982
+        ]
+    ]
+}{
+    "Mother-Daughter_Morning": [
+        [
+            "family",
+            0.0
+        ],
+        [
+            "morning",
+            0.03897552192211151
+        ],
+        [
+            "vanity",
+            0.04991560056805611
+        ],
+        [
+            "shared",
+            0.01891981065273285
+        ],
+        [
+            "generations",
+            0.027835913002490997
+        ],
+        [
+            "care",
+            0.05931740626692772
+        ],
+        [
+            "mother daughter",
+            0.0
+        ],
+        [
+            "morning light",
+            0.0352395623922348
+        ],
+        [
+            "shared skincare",
+            0.17759010195732117
+        ],
+        [
+            "multi-generational",
+            0.06641553342342377
+        ]
+    ]
+}{
+    "Desk-to-Dinner_Reset": [
+        [
+            "desk",
+            0.09051644802093506
+        ],
+        [
+            "dinner",
+            0.0
+        ],
+        [
+            "reset",
+            0.01290773507207632
+        ],
+        [
+            "transition",
+            0.0
+        ],
+        [
+            "urban",
+            0.09357074648141861
+        ],
+        [
+            "evening",
+            0.05761893838644028
+        ],
+        [
+            "desk to dinner",
+            0.07938969135284424
+        ],
+        [
+            "golden hour",
+            0.08729127794504166
+        ],
+        [
+            "city view",
+            0.008445276878774166
+        ],
+        [
+            "evening clutch",
+            0.015311730094254017
+        ]
+    ]
+}
